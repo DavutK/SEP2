@@ -34,9 +34,33 @@ void ampelTest() {
 	}
 }
 
-void startTest() {
+void ampelTest2(){
 
+	int n = 0;
+	for(n = 0; n < 2; ++n){
+		lampenTest(n);
+		lampenTest(++n);
+		sleep(2);
+
+		lampenTest(n);
+		cout<< n << endl;
+		lampenTest(--n);
+		sleep(2);
+	}
+
+	lampenTest(2);
+	lampenTest(0);
+	sleep(2);
+
+	lampenTest(2);
+	lampenTest(0);
+	sleep(2);
+
+}
+
+void startTest() {
 	ampelTest();
+	ampelTest2();
 
 }
 

@@ -19,6 +19,7 @@
 void lampenTest(int color);
 void startTest();
 void ampelTest();
+void ampelTest2();
 void KnightRider();
 
 #endif /* TEST_H_ */

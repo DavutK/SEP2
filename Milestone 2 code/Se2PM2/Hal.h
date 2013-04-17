@@ -8,12 +8,16 @@
 #ifndef HAL_H_
 #define HAL_H_
 
+#include "MegaHeader.h"
+
 class Hal {
 
 private:
 	Hal();
 
 	static Hal* instance;
+
+	static Mutex* halMutex;
 
 public:
 	~Hal();

@@ -1,6 +1,6 @@
-main.o: C:/ide-4.7-workspace/Se2PM2/main.cpp \
- C:/ide-4.7-workspace/Se2PM2/MegaHeader.h \
- C:/QNX650/target/qnx6/usr/include/pthread.h \
+Seriell.o: C:/ide-4.7-workspace/Se2PM2/Seriell.cpp \
+ C:/ide-4.7-workspace/Se2PM2/Seriell.h \
+ C:/QNX650/target/qnx6/usr/include/fcntl.h \
  C:/QNX650/target/qnx6/usr/include/sys/platform.h \
  C:/QNX650/target/qnx6/usr/include/sys/srcversion.h \
  C:/QNX650/target/qnx6/usr/include/sys/compiler_gnu.h \
@@ -9,31 +9,30 @@ main.o: C:/ide-4.7-workspace/Se2PM2/main.cpp \
  C:/QNX650/target/qnx6/usr/include/_pack64.h \
  C:/QNX650/target/qnx6/usr/include/sys/target_nto.h \
  C:/QNX650/target/qnx6/usr/include/_packpop.h \
- C:/QNX650/target/qnx6/usr/include/sys/cpuinline.h \
- C:/QNX650/target/qnx6/usr/include/x86/cpuinline.h \
- C:/QNX650/target/qnx6/usr/include/time.h \
- C:/QNX650/target/qnx6/usr/include/sched.h \
+ C:/QNX650/target/qnx6/usr/include/unistd.h \
+ C:/QNX650/target/qnx6/usr/include/confname.h \
+ C:/QNX650/target/qnx6/usr/include/process.h \
+ C:/QNX650/target/qnx6/usr/include/sys/stat.h \
+ C:/QNX650/target/qnx6/usr/include/termios.h \
  C:/QNX650/target/qnx6/usr/include/sys/types.h \
- C:/QNX650/target/qnx6/usr/include/sys/storage.h \
- C:/QNX650/target/qnx6/usr/include/sys/siginfo.h \
- C:/QNX650/target/qnx6/usr/include/x86/smpxchg.h \
- C:/ide-4.7-workspace/Se2PM2/Mutex.h \
- C:/QNX650/target/qnx6/usr/include/stdlib.h \
- C:/QNX650/target/qnx6/usr/include/malloc.h \
- C:/QNX650/target/qnx6/usr/include/alloca.h \
- C:/QNX650/target/qnx6/usr/include/sys/wait.h \
- C:/QNX650/target/qnx6/usr/include/signal.h \
- C:/QNX650/target/qnx6/usr/include/stdio.h \
- C:/QNX650/target/qnx6/usr/include/cpp/c/cstdlib \
- C:/QNX650/target/qnx6/usr/include/yvals.h \
- C:/QNX650/target/qnx6/usr/include/cpp/string \
+ C:/QNX650/target/qnx6/usr/include/errno.h \
+ C:/QNX650/target/qnx6/usr/include/cpp/iostream.h \
  C:/QNX650/target/qnx6/usr/include/cpp/istream \
  C:/QNX650/target/qnx6/usr/include/cpp/ostream \
  C:/QNX650/target/qnx6/usr/include/cpp/ios \
  C:/QNX650/target/qnx6/usr/include/cpp/xlocnum \
  C:/QNX650/target/qnx6/usr/include/cpp/c/climits \
+ C:/QNX650/target/qnx6/usr/include/yvals.h \
  C:/QNX650/target/qnx6/usr/include/limits.h \
  C:/QNX650/target/qnx6/usr/include/cpp/c/cstdio \
+ C:/QNX650/target/qnx6/usr/include/stdio.h \
+ C:/QNX650/target/qnx6/usr/include/cpp/c/cstdlib \
+ C:/QNX650/target/qnx6/usr/include/stdlib.h \
+ C:/QNX650/target/qnx6/usr/include/malloc.h \
+ C:/QNX650/target/qnx6/usr/include/alloca.h \
+ C:/QNX650/target/qnx6/usr/include/sys/wait.h \
+ C:/QNX650/target/qnx6/usr/include/signal.h \
+ C:/QNX650/target/qnx6/usr/include/sys/siginfo.h \
  C:/QNX650/target/qnx6/usr/include/cpp/streambuf \
  C:/QNX650/target/qnx6/usr/include/cpp/xiosbase \
  C:/QNX650/target/qnx6/usr/include/cpp/xlocale \
@@ -62,28 +61,5 @@ main.o: C:/ide-4.7-workspace/Se2PM2/main.cpp \
  C:/QNX650/target/qnx6/usr/include/cpp/c/clocale \
  C:/QNX650/target/qnx6/usr/include/locale.h \
  C:/QNX650/target/qnx6/usr/include/cpp/c/ctime \
- C:/QNX650/target/qnx6/usr/include/cpp/xlocinfo.h \
- C:/ide-4.7-workspace/Se2PM2/Addresses.h \
- C:/ide-4.7-workspace/Se2PM2/AmpelThread.h \
- C:/ide-4.7-workspace/Se2PM2/HAWThread.h \
- C:/QNX650/target/qnx6/usr/include/cpp/iostream.h \
- C:/QNX650/target/qnx6/usr/include/sys/neutrino.h \
- C:/QNX650/target/qnx6/usr/include/sys/states.h \
- C:/QNX650/target/qnx6/usr/include/x86/neutrino.h \
- C:/ide-4.7-workspace/Se2PM2/HWaccess.h \
- C:/QNX650/target/qnx6/usr/include/hw/inout.h \
- C:/QNX650/target/qnx6/usr/include/gulliver.h \
- C:/QNX650/target/qnx6/usr/include/x86/inout.h \
- C:/QNX650/target/qnx6/usr/include/ioaccess.h \
- C:/QNX650/target/qnx6/usr/include/wrappers.h \
- C:/QNX650/target/qnx6/usr/include/stdint.h \
- C:/ide-4.7-workspace/Se2PM2/Hal.h \
- C:/QNX650/target/qnx6/usr/include/unistd.h \
- C:/QNX650/target/qnx6/usr/include/confname.h \
- C:/QNX650/target/qnx6/usr/include/process.h \
- C:/QNX650/target/qnx6/usr/include/cpp/iostream \
- C:/ide-4.7-workspace/Se2PM2/Seriell.h \
- C:/QNX650/target/qnx6/usr/include/fcntl.h \
- C:/QNX650/target/qnx6/usr/include/sys/stat.h \
- C:/QNX650/target/qnx6/usr/include/termios.h \
- C:/QNX650/target/qnx6/usr/include/errno.h
+ C:/QNX650/target/qnx6/usr/include/time.h \
+ C:/QNX650/target/qnx6/usr/include/cpp/xlocinfo.h

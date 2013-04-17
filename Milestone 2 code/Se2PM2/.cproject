@@ -45,7 +45,6 @@
 <pathentry excluding="Aktorik/" kind="src" path=""/>
 <pathentry kind="out" path=""/>
 <pathentry kind="con" path="com.qnx.tools.ide.qde.QDE_PROJECT_CONTAINER"/>
-<pathentry kind="src" path="Aktorik"/>
 </storageModule>
 </cconfiguration>
 </storageModule>

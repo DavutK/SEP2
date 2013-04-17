@@ -23,7 +23,8 @@ VFLAG_g=-gstabs+
 LIBS+=ioaccess fonts cpt_terminal ph
 
 
-
+#===== CCFLAGS - add the flags to the C compiler command line. 
+CCFLAGS+=-DSIMULATION
 
 include $(MKFILES_ROOT)/qmacros.mk
 

@@ -1,4 +1,4 @@
-main.o: C:/ide-4.7-workspace/Se2PM2/main.cpp \
+Mutex.o: C:/ide-4.7-workspace/Se2PM2/Mutex.cpp \
  C:/ide-4.7-workspace/Se2PM2/MegaHeader.h \
  C:/QNX650/target/qnx6/usr/include/pthread.h \
  C:/QNX650/target/qnx6/usr/include/sys/platform.h \

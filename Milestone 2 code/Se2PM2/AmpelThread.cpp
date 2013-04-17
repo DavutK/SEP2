@@ -24,8 +24,9 @@ AmpelThread::~AmpelThread() {
 }
 
 void AmpelThread::shutdown() {
-	cout << "Shutting down..." << endl;
+
 	hal->~Hal();
+	cout << "Shutting down...1" << endl;
 
 }
 
@@ -36,10 +37,8 @@ void AmpelThread::execute(void *arg) {
 
 
 	while (!isStopped()) {
-
 		hal->laufbandVor();
 		hal->ampelGruenAn();
-
 	}
 
 }

@@ -5,7 +5,6 @@
  *      Author: Davut
  */
 
-
 #include "MegaHeader.h"
 
 using namespace std;
@@ -13,12 +12,14 @@ using namespace std;
 int main(int argc, char *argv[]) {
 #ifdef SIMULATION
 	cout << "Simulation aktiv" << endl;
-	cout << "Zum Aufbau der Verbindung muss Die Festo Simulation schon laufen." << endl;
+	cout << "Zum Aufbau der Verbindung muss Die Festo Simulation schon laufen."
+			<< endl;
 	IOaccess_open(); // Baue die Verbindung zur Simulation auf
 #endif
 
 	thread::AmpelThread ampelThread;
 	ampelThread.start(NULL);
+
 	string str("");
 
 	do {
@@ -29,6 +30,7 @@ int main(int argc, char *argv[]) {
 	ampelThread.stop();
 	ampelThread.join();
 
+//	Seriell ser;
 
 #ifdef SIMULATION
 	IOaccess_close(); // Schliesse die Verbindung zur Simulation

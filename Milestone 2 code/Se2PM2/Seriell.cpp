@@ -8,9 +8,7 @@
 #include "Seriell.h"
 
 Seriell::Seriell() {
-	cout << "vor OPEN()" << endl;
 	fd = (open(SCHNITTSTELLE1, O_RDWR));
-	cout << fd << endl;
 }
 
 Seriell::~Seriell() {
@@ -20,12 +18,12 @@ Seriell::~Seriell() {
 
 int Seriell::sendMsg(char msg){
 
-	write(fd,&msg,sizeof(msg));
-	return 0;
+	return write(fd,&msg,sizeof(msg));
+
 }
 
 int Seriell::readMsg(char* buff){
 
-	readcond(fd,buff, sizeof(buff),1,0,10);
-	return 0;
+	return readcond(fd,buff, sizeof(buff),1,0,10);
+
 }

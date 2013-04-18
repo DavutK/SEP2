@@ -17,20 +17,27 @@ int main(int argc, char *argv[]) {
 	IOaccess_open(); // Baue die Verbindung zur Simulation auf
 #endif
 
-	thread::AmpelThread ampelThread;
-	ampelThread.start(NULL);
+//	thread::AmpelThread ampelThread;
+//	ampelThread.start(NULL);
+//
+//	string str("");
+//
+//	do {
+//		cout << "Enter 'q' to exit." << endl;
+//		cin >> str;
+//	} while (str != "q");
+//
+//	ampelThread.stop();
+//	ampelThread.join();
 
-	string str("");
+	Seriell ser;
 
-	do {
-		cout << "Enter 'q' to exit." << endl;
-		cin >> str;
-	} while (str != "q");
+	char send = '1';
 
-	ampelThread.stop();
-	ampelThread.join();
+	while(true){
+		ser.sendMsg(send);
+	}
 
-//	Seriell ser;
 
 #ifdef SIMULATION
 	IOaccess_close(); // Schliesse die Verbindung zur Simulation

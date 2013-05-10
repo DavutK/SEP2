@@ -13,9 +13,9 @@ const struct sigevent * ISR (void *arg, int id);
 
 namespace hal {
 
-    class SensorikIntro: public thread::HAWThread {
+    class Sensorik: public thread::HAWThread {
     private:
-        static SensorikIntro* instance;
+        static Sensorik* instance;
 
         int isrChid;
         int interruptId;
@@ -27,11 +27,11 @@ namespace hal {
         uint8_t portBstatus;
         uint8_t portCstatus;
 
-        SensorikIntro();
+        Sensorik();
 
     public:
-        ~SensorikIntro();
-        static SensorikIntro* getInstance();
+        ~Sensorik();
+        static Sensorik* getInstance();
 
         void stop(); // HAWThread: stop -> virtual
 
@@ -44,4 +44,4 @@ namespace hal {
     };
 }
 
-#endif /* SENSORIKINTRO_H_ */
+#endif /* Sensorik_H_ */

@@ -2,7 +2,7 @@
  * SensorikIntro.cpp
  */
 
-#include "SensorikIntro.h"
+#include "Sensorik.h"
 #include "Addresses.h"
 #include "HWaccess.h"
 #include "Hal.h"
@@ -40,9 +40,9 @@ const struct sigevent* ISR(void* arg, int id) {
     return event;
 }
 
-hal::SensorikIntro* hal::SensorikIntro::instance = NULL;
+hal::Sensorik* hal::Sensorik::instance = NULL;
 
-hal::SensorikIntro::SensorikIntro() {
+hal::Sensorik::Sensorik() {
     // make sure the HAL object is created
 	Hal::getInstance();
     initInterrupts();
@@ -62,30 +62,30 @@ hal::SensorikIntro::SensorikIntro() {
     }
 }
 
-hal::SensorikIntro::~SensorikIntro() {
+hal::Sensorik::~Sensorik() {
     if (instance != NULL) {
         delete instance;
         instance = NULL;
     }
 }
 
-hal::SensorikIntro* hal::SensorikIntro::getInstance() {
+hal::Sensorik* hal::Sensorik::getInstance() {
     if (instance == NULL) {
-        instance = new SensorikIntro();
+        instance = new Sensorik();
     }
     return instance;
 }
 
-void hal::SensorikIntro::initInterrupts() {
+void hal::Sensorik::initInterrupts() {
     // create channel to receive pulse messages from the ISR
     isrChid = ChannelCreate(0);
     if (isrChid == -1) {
-        perror("SensorikIntro: ChannelCreate isrChid failed");
+        perror("Sensorik: ChannelCreate isrChid failed");
         exit(EXIT_FAILURE);
     }
     isr_coid = ConnectAttach(0, 0, isrChid, _NTO_SIDE_CHANNEL, 0);
     if (isr_coid == -1) {
-        perror("SensorikIntro: ConnectAttach isr_coid failed");
+        perror("Sensorik: ConnectAttach isr_coid failed");
         exit(EXIT_FAILURE);
     }
 
@@ -93,7 +93,7 @@ void hal::SensorikIntro::initInterrupts() {
     SIGEV_PULSE_INIT(&event, isr_coid, SIGEV_PULSE_PRIO_INHERIT, 0, 0);
     interruptId = InterruptAttach(11, ISR, &event, sizeof(event), 0);
     if (interruptId == -1) {
-        perror("SensorikIntro: InterruptAttach failed");
+        perror("Sensorik: InterruptAttach failed");
         exit(EXIT_FAILURE);
     }
 
@@ -113,7 +113,7 @@ void hal::SensorikIntro::initInterrupts() {
     portCstatus = in8(DIO_BASE + DIO_OFFS_B);
 }
 
-void hal::SensorikIntro::stop() {
+void hal::Sensorik::stop() {
     HAWThread::stop(); // super.stop();
 
     if (-1 == ConnectDetach(isr_coid)) {
@@ -128,10 +128,10 @@ void hal::SensorikIntro::stop() {
 //    }
 }
 
-void hal::SensorikIntro::shutdown() {
+void hal::Sensorik::shutdown() {
 }
 
-void hal::SensorikIntro::execute(void *arg) {
+void hal::Sensorik::execute(void *arg) {
     cout << "| code  |  " << "value |" << endl;
     cout << "|----------------|" << endl;
 

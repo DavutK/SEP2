@@ -12,7 +12,7 @@
 #include <HWaccess.h>
 #include <HAWThread.h>
 #include <HAL.h>
-#include <SensorikIntro.h>
+#include <Sensorik.h>
 
 
 using namespace std;
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     cout << "=========================================================" << endl;
     cout << endl;
 
-    SensorikIntro* sens = SensorikIntro::getInstance();
+    Sensorik* sens = Sensorik::getInstance();
     sens->start(NULL);
 
     string quit;

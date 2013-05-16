@@ -1,5 +1,5 @@
-Hal.o: C:/ide-4.7-workspace/Se2PM2/Hal.cpp \
- C:/ide-4.7-workspace/Se2PM2/Hal.h \
+Test2.o: C:/ide-4.7-workspace/Se2PM2/Test2.cpp \
+ C:/ide-4.7-workspace/Se2PM2/Test2.h C:/ide-4.7-workspace/Se2PM2/Hal.h \
  C:/QNX650/target/qnx6/usr/include/stdint.h \
  C:/QNX650/target/qnx6/usr/include/sys/platform.h \
  C:/QNX650/target/qnx6/usr/include/sys/srcversion.h \

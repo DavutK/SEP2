@@ -111,24 +111,46 @@ void Hal::ampelGruenAn() {
 
 }
 
+//Laufband neu
+
+
 void Hal::laufbandVor() {
 
 	halMutex->lock();
 	uint8_t val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_1);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_3);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
 	out8(DIO_BASE + DIO_OFFS_A, val | BIT_0);
+
 	halMutex->unlock();
 }
 
 void Hal::laufbandZurueck() {
 	halMutex->lock();
 	uint8_t val = in8(DIO_BASE + DIO_OFFS_A);
-	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_1);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_3);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_0);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val | BIT_1);
 	halMutex->unlock();
 }
 
 void Hal::laufbandStop() {
 	halMutex->lock();
 	uint8_t val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_0);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
+	out8(DIO_BASE + DIO_OFFS_A, val & ~BIT_1);
+
+	val = in8(DIO_BASE + DIO_OFFS_A);
 	out8(DIO_BASE + DIO_OFFS_A, val | BIT_3);
 	halMutex->unlock();
 }

@@ -28,6 +28,7 @@ int main(int argc, char *argv[]) {
     IOaccess_open();
 #endif
 
+
     cout << "Sensorik Intro" << endl;
     cout << "=========================================================" << endl;
     cout << endl;
@@ -44,6 +45,8 @@ int main(int argc, char *argv[]) {
 
     sens->stop();
     sens->join();
+
+	out8(DIO_BASE + DIO_OFFS_A, DIO_OFFS_A);
 
     cout << " done." << endl;
 

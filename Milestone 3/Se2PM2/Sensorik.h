@@ -34,6 +34,7 @@ namespace hal {
         static Sensorik* getInstance();
 
         void stop(); // HAWThread: stop -> virtual
+        int getHeight();
 
     protected:
         virtual void execute(void* arg);
